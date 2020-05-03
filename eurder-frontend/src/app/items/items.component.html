@@ -1,4 +1,22 @@
 <h2>My items</h2>
+<div>
+  <label>Item name:
+    <input #itemName/>
+  </label>
+  <label>Item description:
+    <input #itemDescription/>
+  </label>
+  <label>Item price:
+    <input type="number" #itemPrice/>
+  </label>
+  <label>Item amount:
+    <input type="number" #itemAmount/>
+  </label>
+  <label>Item imageUrl:
+    <input #itemImageUrl/>
+  </label>
+  <button (click)="add(itemName.value, itemDescription.value, itemPrice.valueAsNumber, itemAmount.valueAsNumber, itemImageUrl.value)">add</button>
+</div>
 <ul class="items">
   <li *ngFor="let item of items">
     <a routerLink="/detail/{{item.id}}">
